@@ -3,10 +3,12 @@ This is the base of the autograder.
 """
 import json
 import datetime
+import os
 from .AutograderTest import AutograderTest, global_tests
 
 results_file = "/autograder/results/results.json"
-results_file = "./results.json"
+if os.path.isfile("/.localhost"):
+    results_file = "./results.json"
 
 class Autograder:
     def __init__(self):
