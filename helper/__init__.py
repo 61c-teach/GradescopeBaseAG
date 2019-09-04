@@ -11,6 +11,9 @@ def Test(*args, **kwargs):
     @Test("Foo", 2):
     def mytest(ag, test: AutograderTest):
         return 2
+
+    Note: your function still MUST accept two positional arguments, the first gives you the main Autograder class while the second gives you the current
+    tests AutograderTest class. That will be the method for interacting with the autograder.
     """
     def inner(func):
         AutograderTest(func, *args, **kwargs)

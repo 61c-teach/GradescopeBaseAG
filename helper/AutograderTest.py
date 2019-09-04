@@ -18,7 +18,8 @@ class AutograderTest:
         number: str=None, 
         tags: [str]=None, 
         visibility: Visibility=default_visibility, 
-        extra_data=None
+        extra_data=None,
+        kill_autograder_on_error: bool=False
     ):
         """
         The test_fn MUST take in parameters Autograder and AutograderTest in that order.
@@ -33,6 +34,7 @@ class AutograderTest:
         self.extra_data = extra_data
         self.score = None
         self.output = ""
+        self.kill_autograder_on_error = kill_autograder_on_error
         global_tests.append(self)
 
     def print(self, *args, sep=' ', end='\n', file=None, flush=True):
@@ -46,7 +48,9 @@ class AutograderTest:
             r = self.test_fn(ag, self)
             if isinstance(r, (int, float)):
                 self.set_score(r)
-        ag.safe_env(f)
+        def handler():
+            return self.kill_autograder_on_error
+        ag.safe_env(f, handler=handler)
 
     def get_results(self):
         data = {"output": self.output}
