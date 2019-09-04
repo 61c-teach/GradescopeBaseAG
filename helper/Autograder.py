@@ -80,16 +80,16 @@ class Autograder:
         try:
             f()
         except Exception as exc:
+            print("An exception occured in the safe environment!")
+            import traceback
+            traceback.print_exc()
+            print(exc)
             if handler is not None:
                 try:
                     if handler():
                         return
                 except Exception as exc:
                     print("An exception occured while executing the exception handler!")
-            print("An exception occured in the safe environment!")
-            import traceback
-            traceback.print_exc()
-            print(exc)
             self.ag_fail("An unexpected exception ocurred while trying to execute the autograder. Please try again or contact a TA if this persists.")
 
     def run_tests(self):
