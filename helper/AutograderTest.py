@@ -48,8 +48,13 @@ class AutograderTest:
             r = self.test_fn(ag, self)
             if isinstance(r, (int, float)):
                 self.set_score(r)
+            if isinstance(r, Max) and self.max_score is not None:
+                self.set_score(self.max_score)
         def handler():
-            return self.kill_autograder_on_error
+            if self.kill_autograder_on_error:
+                return True
+            self.print("An unexpected error occured in the Autograder when attempting to run this testcase! Please contact a TA if this persists.")
+            return False
         ag.safe_env(f, handler=handler)
 
     def get_results(self):
