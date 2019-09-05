@@ -1,4 +1,4 @@
-from helper import AutograderTest, Max, Test
+from GradescopeBase import AutograderTest, Max, Test
 
 @Test("Test 1: First test", 2)
 def Test1_fn(ag, test: AutograderTest):

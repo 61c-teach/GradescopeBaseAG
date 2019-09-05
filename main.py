@@ -1,4 +1,4 @@
-from helper import Autograder, global_tests
+from GradescopeBase import Autograder, global_tests
 try:
     from tests import *
 except Exception as exc:
