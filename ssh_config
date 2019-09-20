@@ -1,3 +1,0 @@
-Host github.com
-  IdentityFile ~/.ssh/GradescopeBase_deploy_key
-  IdentitiesOnly yes
