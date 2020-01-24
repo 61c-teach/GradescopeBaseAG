@@ -1,4 +1,10 @@
 #!/bin/bash
+#/*
+# * @Author: ThaumicMekanism [Stephan K.] 
+# * @Date: 2020-01-23 21:05:45 
+# * @Last Modified by:   ThaumicMekanism [Stephan K.] 
+# * @Last Modified time: 2020-01-23 21:05:45 
+# */
 set -e
 
 DIR="$( cd "$( dirname "${BASH_SOURCE[0]}" )" >/dev/null 2>&1 && pwd )"

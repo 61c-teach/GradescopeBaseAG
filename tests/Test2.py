@@ -1,3 +1,11 @@
+"""
+/*
+ * @Author: ThaumicMekanism [Stephan K.] 
+ * @Date: 2020-01-23 21:04:39 
+ * @Last Modified by:   ThaumicMekanism [Stephan K.] 
+ * @Last Modified time: 2020-01-23 21:04:39 
+ */
+"""
 from GradescopeBase import AutograderTest, Max
 
 def Test2_fn(ag, test: AutograderTest):

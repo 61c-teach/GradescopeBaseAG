@@ -1,3 +1,11 @@
+"""
+/*
+ * @Author: ThaumicMekanism [Stephan K.] 
+ * @Date: 2020-01-23 20:57:54 
+ * @Last Modified by: ThaumicMekanism [Stephan K.]
+ * @Last Modified time: 2020-01-23 21:04:49
+ */
+"""
 from GradescopeBase import Autograder, RateLimit, global_tests
 rate_limit = False
 try:

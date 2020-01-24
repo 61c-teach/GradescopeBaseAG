@@ -1,2 +1,10 @@
 #!/usr/bin/env bash
+
+#/*
+# * @Author: ThaumicMekanism [Stephan K.] 
+# * @Date: 2020-01-23 21:04:56 
+# * @Last Modified by:   ThaumicMekanism [Stephan K.] 
+# * @Last Modified time: 2020-01-23 21:04:56 
+# */
+
 python3 ./main.py
