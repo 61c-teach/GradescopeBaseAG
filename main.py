@@ -7,14 +7,10 @@
  */
 """
 from GradescopeBase import Autograder, RateLimit, global_tests
-rate_limit = False
-try:
-    from tests import *
-except Exception as exc:
-    print("Failed to import a test!")
-    print(exc)
-try:
-    print("Successfully imported tests")
+
+if __name__ == "__main__":
+    rate_limit = False
+    
     rlim = None
     if rate_limit:
         """
@@ -24,9 +20,7 @@ try:
         limit, can just set rlim to None.
         """
         rlim = RateLimit(6, hours=2)
-    ag = Autograder(rlim)
-    # ag.print("We are currently performing maintenance on the autograder so test may suddenly break. Thank you for your patients!")
-    Autograder.run(ag)
-except Exception as exc:
-    print("Failed to run the autograder")
-    print(exc)
+
+    autograder = Autograder(rate_limit=rlim)
+    autograder.import_tests(tests_dir="tests", blacklist=["__init__.py", "lib.py"])
+    autograder.run()
