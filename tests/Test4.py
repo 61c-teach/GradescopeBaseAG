@@ -10,7 +10,7 @@ from GradescopeBase import Autograder, AutograderTest, Max, SubTest, SubTestRunn
 
 class CustomSubTestRunner(SubTestRunner):
     def post_test_run(self, ag: Autograder, test: AutograderTest, data: dict):
-        if data["passed"]:
+        if all(data["passed"]):
             test.print("You have passed this test, here is a secret message: :)")
 Test4 = AutograderTest(CustomSubTestRunner(), "Test 4: Subtests Complex", 2)
 

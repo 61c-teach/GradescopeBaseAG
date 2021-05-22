@@ -21,5 +21,5 @@ def st1(ag: Autograder, test: AutograderTest):
 @SubTest(Test4, "Passes with printing!")
 def st2(ag: Autograder, test: AutograderTest):
     test.print("Im gonna error!")
-    # raise Exception()
+    raise Exception()
     return True
